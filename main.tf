@@ -13,8 +13,7 @@ terraform {
   }
 }
 provider "aws" {
-  region = "sa-east-1"
-  profile = "portfolio"
+  region = "us-east-1"
 }
 
 # Sufixo aleatório: nomes de bucket são únicos no mundo todo
