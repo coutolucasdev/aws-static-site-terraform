@@ -16,6 +16,14 @@ flowchart LR
 
 O bucket S3 é totalmente privado. Somente a distribuição CloudFront tem permissão de leitura, por meio de Origin Access Control (OAC) e uma bucket policy restrita ao ARN da distribuição. O acesso direto ao bucket retorna `Access Denied`.
 
+## Evidências de segurança
+
+O bucket é privado: o acesso direto ao endereço do S3 é negado, e o conteúdo só é entregue pelo CloudFront.
+
+**Acesso direto ao bucket (bloqueado):**
+
+![Acesso negado ao bucket](docs/acesso-negado-bucket.jpeg)
+
 ## Tecnologias
 
 - AWS: S3, CloudFront, IAM
