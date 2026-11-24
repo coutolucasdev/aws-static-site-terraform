@@ -42,3 +42,12 @@ resource "aws_s3_bucket_public_access_block" "site" {
 output "nome_do_bucket" {
   value = aws_s3_bucket.site.bucket
 }
+
+# Envia a página para o bucket
+resource "aws_s3_object" "index" {
+  bucket       = aws_s3_bucket.site.id
+  key          = "index.html"
+  source       = "${path.module}/site/index.html"
+  content_type = "text/html"
+  etag         = filemd5("${path.module}/site/index.html")
+}
